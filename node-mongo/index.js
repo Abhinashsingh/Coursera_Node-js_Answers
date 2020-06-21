@@ -12,10 +12,10 @@ MongoClient.connect(url, (err, client) => {
     dboper.insertDocument(db, { name: "Abhinash Singh", description: "Very kaimzzz" }, 'dishes', (result) => {
         console.log('Insert Document:\n', result.ops);
 
-        dboper.findDocument(db, 'dishes', (docs) => {
+        dboper.findDocuments(db, 'dishes', (docs) => {
             console.log('Found Documents:\n', docs);
 
-            dboper.updateDocument(db, { 'name': 'Abhinash Singh' }, 'dishes', (result) => {
+            dboper.updateDocument(db, { name: 'Abhinash Singh' },{description: 'No more kaimzzz(updated)'} ,'dishes', (result) => {
                 console.log('updated Document:\n', result.result);
                 dboper.findDocuments(db, 'dishes', (docs) => {
                     console.log('Found Documents:\n', docs);
