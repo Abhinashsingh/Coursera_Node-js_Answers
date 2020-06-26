@@ -13,10 +13,10 @@ connect.then((db) => {
         name: 'Uthappizza',
         description: 'test'
     })
-        .then((dish) => {
+    .then((dish) => {
             console.log(dish);
 
-            return Dishes.find({}).exec();
+            return Dishes.find({});
         })
         .then((dishes) => {
             console.log(dishes);
